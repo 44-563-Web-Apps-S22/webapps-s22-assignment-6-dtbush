@@ -2,8 +2,8 @@
 <html>
  
 <body>
-
-<h2>Getting input</h2>
+<title>Presidents</title>
+<h2>President guess by Drake</h2>
 
 <form>
     <label for="form1_age">What is your age </label>
@@ -22,15 +22,15 @@
 
 function resolveForm (){
     console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
+    secret = document.getElementById("form1_age").value
+    guess = document.getElementById("form1_nick").value
     confirmed = confirm("Are these the values? "+age+" and "+nick)
     
     out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
+    if(secret == guess){
+        out.innerHTML = "You got it right!"
     } else {
-        out.innerHTML = "Values were not confirmed"
+        out.innerHTML = "Wrong President"
     }
 }
 </script>
