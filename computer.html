@@ -20,13 +20,32 @@
 
 <p id="result">This text will be replaced </p>
 
+<form>
+    <label for="form1_prop">Enter A Property Name</label>
+    <input type ="text" id="form1_prop" name="form1_name" min=10 max=50 step=2 value="engraved"> <br>
 
+    <label for="form1_value">Enter a Value</label>
+    <input type ="text" id="form1_value" name="form1_name" autofocus> <br>
 
+    <input type="button" onclick="updateComputer()" value="Update the Computer">
+</form>
 
+<p id="result2">This text will be replaced </p>
 
 
 <script> 
 my_computer = {}
+
+function updateComputer(){
+    prop = document.getElementById("form1_prop").value
+    val = document.getElementById("form1_value").value
+    my_computer.Property = prop
+    my_computer.Value = val
+
+    out = document.getElementById("result2")
+   out.innerHTML = JSON.stringify(my_computer)
+}
+
 
 function orderComputer(){
     my_computer = {}
