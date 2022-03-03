@@ -18,9 +18,51 @@
 
 <p id="result">This text will be replaced </p>
 
+
+<form>
+<input type="radio" id="times_btn" value="times" onclick="chooseOp()">
+<label for="times_btn">*</label>
+<input type="radio" id="div_btn" value="divide" onclick="chooseOp()">
+<label for="div_btn">/</label>
+<input type="radio" id="ex_btn" value="exponent" onclick="chooseOp()">
+<label for="ex_btn">**</label>
+</form>
+
+<p id="result2">This text will be replaced </p>
+
+
 <script> 
 tipIncrease = 0
 checkAmount = 0
+
+function chooseOp(){
+    value = 0
+    tipIncrease = document.getElementById("tip_increase").value
+    checkAmount = document.getElementById("check_amount").value
+
+    
+    
+
+    out = document.getElementById("result2")
+
+    if(document.getElementById("times_btn").checked){
+        value = tipIncrease * checkAmount
+        out.innerHTML = value
+    }
+
+    if(document.getElementById("div_btn").checked){
+        value = checkAmount/tipIncrease
+        out.innerHTML = value
+    }
+
+    if(document.getElementById("ex_btn").checked){
+        value = Math.pow(checkAmount, tipIncrease)
+        out.innerHTML = value
+    }
+
+}
+
+
 function tips(){
     result = ""
 
