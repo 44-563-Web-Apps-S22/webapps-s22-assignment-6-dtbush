@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<title>Computers Now!</title>
+<h2>Drake orders a computer</h2>
+
+<form>
+    <input type="checkbox" id="memory" name="option1" value="extra" checked>
+    <label for="option1">Extra Memory</label></br>
+
+    <input type="checkbox" id="mouse" name="option2" value="mouse" checked>
+    <label for="option2">Mouse</label></br>
+
+    <input type="checkbox" id="cell" name="option3" value="cell" checked>
+    <label for="option3">Cell Service</label></br>
+
+    <input type="button" onclick="orderComputer()" value="Order a Computer">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+
+
+
+
+
+<script> 
+my_computer = {}
+
+function orderComputer(){
+    my_computer = {}
+    ramT = document.getElementById("memory").checked 
+    mouseT = document.getElementById("mouse").checked 
+    cellT = document.getElementById("cell").checked 
+
+    my_computer = { Ram: ramT, Mouse: mouseT, Cell: cellT}
+
+
+    out = document.getElementById("result")
+    out.innerHTML = JSON.stringify(my_computer)
+
+}
+/*
+my_computer[Memory] = memory 
+   my_computer[Mouse] = mouse
+   my_computer[Cell] = cell
+*/
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
