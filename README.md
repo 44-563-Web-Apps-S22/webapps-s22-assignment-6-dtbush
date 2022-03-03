@@ -4,3 +4,4 @@ Assignment introduction to Java Script and DOM
 [President](President.html)
 [Tips](tips.html)
 [Computer](computer.html)
+![Bird](OrangeBird.jpg)
